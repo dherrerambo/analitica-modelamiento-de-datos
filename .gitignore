@@ -1,0 +1,27 @@
+.*
+!/.gitignore
+~*
+_*
+*.zip
+*.7z
+Admon/
+
+# models/ y output/ estan cerrados por defecto: solo se publican los artefactos
+# que un notebook posterior necesita como ENTRADA, para que un estudiante que no
+# haya podido generarlos pueda continuar con el modulo siguiente.
+models/*
+!models/data.pkl
+!models/metrics.pkl
+!models/modelos_entrenados.pkl
+!models/modelos_optimizados.pkl
+!models/scaler.pkl
+output/*
+!output/Telco-Customer-Churn_Resultados.xlsx
+
+# Nunca se publica: material interno de trabajo del curso
+CLAUDE.md
+bi/
+presentaciones/scripts/
+presentaciones/imagenes/
+presentaciones/Mas_alla_del_dato/
+presentaciones/PowerBi/
