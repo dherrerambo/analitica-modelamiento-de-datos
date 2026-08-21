@@ -47,13 +47,22 @@ Diagnóstico → Datos → Exploración → Preparación → Modelado → Optimi
 * Power BI (opcional)
 
 ### Uso en Colab
+Ejecuta estas dos celdas al inicio de **cada** sesión, antes de correr el notebook:
+
 ~~~bash
 !git clone https://github.com/dherrerambo/analitica-modelamiento-de-datos
+%cd analitica-modelamiento-de-datos/notebooks
 ~~~
 
 ~~~bash
-!pip install wheel jupyter ipykernel pandas numpy matplotlib seaborn scikit-learn statsmodels openpyxl kagglehub tensorflow
+!pip install wheel pandas numpy matplotlib seaborn scikit-learn==1.9.0 statsmodels openpyxl kagglehub tensorflow
 ~~~
+
+> **El `%cd` no es opcional.** Los notebooks leen y escriben con rutas relativas (`../data/`, `../models/`), así que deben ejecutarse desde dentro de `notebooks/`. Sin ese cambio de directorio fallan a partir de `1_GetData.ipynb`.
+
+> **Colab borra todo al cerrar la sesión.** El clon y los archivos que generes (`models/*.pkl`, `output/*.xlsx`) viven en una máquina temporal que se descarta al cerrar la pestaña o tras un rato de inactividad. No es un problema: en la siguiente sesión vuelve a ejecutar las dos celdas y el `git clone` traerá la versión más reciente del repositorio, con los módulos publicados hasta ese momento.
+>
+> Tus respuestas sí se conservan, siempre que uses **Archivo → Guardar una copia en Drive**. Esa copia vive en tu Google Drive y es independiente del repositorio: trabaja siempre sobre ella, nunca sobre el archivo que quedó dentro del clon.
 
 
 ## 3. Diagnóstico
